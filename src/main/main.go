@@ -1,18 +1,17 @@
 package main
 
 import (
-	//"io/ioutil"
 	"fmt"
 	"os"
-	//"syscall"
-
 	"bufio"
-	//"strconv"
-<<<<<<< HEAD
 	"io"
 	"strconv"
-=======
->>>>>>> origin/master
+)
+	//"strconv"
+
+	"io"
+	"strconv"
+
 )
 
 const BUFF_SIZE = 128
@@ -21,6 +20,7 @@ const FILE_NAME = "aaa.ebl"
 func main() {
 	current_dir, _ := os.Getwd()
 	fmt.Println(current_dir)
+
 
 	inputFile, err := os.Open(FILE_NAME)
 	if err != nil {
@@ -32,10 +32,9 @@ func main() {
 	buffer1 := make([]byte, BUFF_SIZE)
 	for{
 		r := bufio.NewReader(inputFile)
-		if err!=nil&&err!=io.EOF{
-			panic(err)
-		}
-		if nil == 0 {
+r.Peek()
+
+		if  == 0 {
 			s1:=strconv.Itoa(index)
 			fw,err:=os.Create("ota_image_"+s1)
 		}
