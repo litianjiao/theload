@@ -1,17 +1,16 @@
 package serial
 
-import ("encoding/binary"
-dr "../../../model/driver"
+import (
+	dr "../../../model/driver"
+	"encoding/binary"
 )
-
 
 type BaseSerialDriver struct {
 	BaseSerial
 
 	endian binary.ByteOrder
-
 }
 
-func NewSerialDriver()  {
+func NewSerialDriver() {
 
 }

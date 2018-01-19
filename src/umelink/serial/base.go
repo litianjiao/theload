@@ -4,28 +4,24 @@ import (
 	"io"
 	"time"
 
-	goSerial "github.com/tarm/goserial"
 	"errors"
+	goSerial "github.com/tarm/goserial"
 )
-
-
-
 
 /*定义了操作串口的机制*/
 type BaseSerial struct {
-	fd             io.ReadWriteCloser    //read write or close   if err or needs reset the io,use close
-	timeout        time.Duration        //超时时间
-	recover_delay  time.Duration        //重试延时
-	recover_trycnt uint                 //重试次数
+	fd             io.ReadWriteCloser //read write or close   if err or needs reset the io,use close
+	timeout        time.Duration      //超时时间
+	recover_delay  time.Duration      //重试延时
+	recover_trycnt uint               //重试次数
 	address        string
-	config         *goSerial.Config     //COM_name 波特率
+	config         *goSerial.Config //COM_name 波特率
 }
-
-
 
 func (this *BaseSerial) Timeout(timeout time.Duration) {
 	this.timeout = timeout
 }
+
 /**/
 func (this *BaseSerial) Close() (err error) {
 	if this.IsOpen() {
@@ -46,6 +42,7 @@ func (this *BaseSerial) IsOpen() bool {
 func (this *BaseSerial) Address() string {
 	return this.address
 }
+
 /* open serial*/
 func (this *BaseSerial) Open(address string, port uint, timeout time.Duration) bool {
 	this.Close()
