@@ -1,16 +1,19 @@
 package serial
 
 import (
-	dr "../../../model/driver"
+	//dr "../../model/driver"
 	"encoding/binary"
 )
 
+
+
 type BaseSerialDriver struct {
 	BaseSerial
-
 	endian binary.ByteOrder
+
 }
 
-func NewSerialDriver() {
-
+func openSerialPort() (result bool) {
+result=true
+if
 }
